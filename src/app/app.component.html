@@ -1,3 +1,120 @@
-<div class="w-full h-[100vh] flex items-center justify-center bg-gray-400">
-  <h1 class="text-4xl font-bold">Transformisi Svoju Kosu</h1>
-</div>
+<!-- HERO SECTION -->
+
+<section
+  class="min-h-[100vh] flex items-center justify-center relative overflow-hidden py-10"
+>
+  <!-- BG IMAGE -->
+  <img
+    src="assets/bg2.png"
+    class="absolute sm:inset-[30px] inset-[15px] shadow-lg w-[calc(100%-30px)] sm:w-[calc(100%-60px)] h-[calc(100%-30px)] sm:h-[calc(100%-70px)] object-cover -z-10 pointer-events-none rounded-2xl"
+    alt="Pozadina"
+  />
+
+  <div
+    class="w-full max-w-[85vw] mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-16 text-center lg:text-left relative z-10"
+  >
+    <!-- Left part(text) -->
+    <div class="flex-1 space-y-5 blur-animate">
+      <p class="text-[#855723] uppercase tracking-widest text-sm">
+        Transformiši svoju kosu
+      </p>
+
+      <h2 class="text-xl sm:text-6xl font-bold leading-snug text-[#2e1b0e]">
+        Zavoli svoju kosu i skalp<br />
+        Od očaja do divljenja
+      </h2>
+
+      <p class="text-[#a76b35] uppercase text-xl font-semibold">
+        Jednostavnim i dokazanim sistemom korak po korak
+      </p>
+
+      <div
+        class="bg-[#0000001a] p-5 rounded-lg shadow-md text-[#5e3a1e] w-max max-w-full"
+      >
+        <p class="text-md font-medium">
+          Pridruži se Masterclass programu i promeni način na koji neguješ kosu.
+        </p>
+        <p class="text-base text-[#855723] mt-1">
+          Ekskluzivna ponuda dostupna ograničeno vreme.
+        </p>
+      </div>
+
+      <div class="text-lg mt-4 font-medium">
+        Samo <span class="line-through text-gray-400">$309.97</span>
+        <strong class="text-[#5A3A1B]">$24.97</strong> danas!
+      </div>
+
+      <p class="text-gray-800 text-base font-semibold">
+        Instant prijava donosi
+        <span class="text-[#5A3A1B]">poseban bonus!</span>
+      </p>
+
+      <button
+        class="join-btn cursor-pointer inline-block bg-[#5A3A1B] text-white px-10 py-3 rounded-lg text-base font-semibold relative overflow-hidden group transition"
+        (click)="sendVoucherMessage()"
+      >
+        <span class="relative z-10">Preuzmi vaučer</span>
+        <span
+          class="absolute inset-0 bg-gradient-to-r from-[#fff]/10 via-[#fff]/40 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700"
+        ></span>
+      </button>
+
+      <p class="text-sm text-gray-600 leading-snug max-w-sm mx-auto lg:mx-0">
+        5 koraka do prvih 10.000 pratilaca uz Reels video sadržaj
+      </p>
+    </div>
+
+    <!-- Right part (image) -->
+    <div class="flex-1 flex justify-center lg:justify-end blur-animate">
+      <img
+        src="assets/wb.png"
+        alt="Masterclass slika"
+        class="w-[380px] lg:w-[420px] rounded-2xl shadow-lg p-2 bg-white/90"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+
+<section
+  class="min-h-[100vh] flex items-center justify-center relative overflow-hidden py-10 rounded-lg"
+>
+  <div
+    class="container mx-auto flex flex-col items-center text-center lg:text-left"
+  >
+    <!-- Heading -->
+    <h2
+      class="scroll-animate text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl leading-tight mb-8"
+    >
+      Pogledajte kratak video - i saznajte zašto se više od
+      <span class="text-[#5A3A1B] font-semibold">500 ljudi</span> odlučilo za
+      transformaciju
+    </h2>
+
+    <!-- Video -->
+    <div
+      class="relative w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-lg mb-10"
+    >
+      <iframe
+        class="w-full h-full scroll-animate"
+        src="https://www.youtube.com/embed/4Qnq0iaK5Fc?si=7U2aECUT1VndZtS5"
+        title="Masterclass Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Button -->
+    <button
+      class="scroll-animate join-btn cursor-pointer inline-block bg-[#5A3A1B] text-white px-10 py-3 rounded-lg text-base font-semibold relative overflow-hidden group transition"
+      (click)="sendVoucherMessage()"
+    >
+      <span class="relative z-10">Preuzmi vaučer</span>
+      <span
+        class="absolute inset-0 bg-gradient-to-r from-[#fff]/10 via-[#fff]/40 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700"
+      ></span>
+    </button>
+  </div>
+</section>
