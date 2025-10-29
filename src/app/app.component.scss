@@ -1,0 +1,104 @@
+@use "tailwindcss";
+
+.test {
+  color: #0000001a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bgPulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.05);
+  }
+}
+
+/* Klase */
+.fade-in {
+  animation: fadeIn 1s ease-out both;
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+}
+
+.scroll-animate.active {
+  animation: slideUp 1.2s ease-out both;
+}
+
+.slide-up-delay {
+  animation: slideUp 1.4s ease-out both;
+}
+
+.animate-bgPulse {
+  animation: bgPulse 8s ease-in-out infinite;
+}
+
+.join-btn {
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* ========================= */
+/* CINEMATIC RISE + BLUR */
+/* ========================= */
+@keyframes riseBlur {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.98);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.02);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Default state before appearing */
+.blur-animate {
+  opacity: 0;
+  transform: translateY(60px) scale(0.98);
+  filter: blur(6px);
+  will-change: opacity, transform, filter;
+}
+
+/* Active state — plays once and STAYS visible */
+.blur-animate.active {
+  animation: riseBlur 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
