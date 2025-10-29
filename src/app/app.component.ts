@@ -30,6 +30,13 @@ export class AppComponent implements AfterViewInit {
   }
 
   sendVoucherMessage() {
-    alert('Sending WhatsApp Voucher message still not implemented...');
+    const phone = '381655053860'; // no '+' for WhatsApp link
+    const message = encodeURIComponent(
+      'Čestitamo! 🎉 Dobijate vaučer sa 20% popusta za naš frizerski salon. Rezervišite svoj termin još danas! 💇‍♀️💇‍♂️'
+    );
+
+    // Opens WhatsApp chat with the given number and message
+    const url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url, '_blank');
   }
 }
