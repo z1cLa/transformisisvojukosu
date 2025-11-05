@@ -2,6 +2,7 @@
 
 .test {
   color: #0000001a;
+  background: #57473698;
 }
 
 @keyframes fadeIn {
@@ -101,4 +102,10 @@
   opacity: 1;
   transform: translateY(0) scale(1);
   filter: blur(0);
+}
+
+.bg-noise {
+  background-image: url("/assets/noise-light.png");
+  opacity: 0.79;
+  mix-blend-mode: soft-light;
 }
