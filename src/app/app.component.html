@@ -32,7 +32,7 @@
         class="bg-[#0000001a] p-5 rounded-lg shadow-md text-[#5e3a1e] sm:w-max sm:max-w-full"
       >
         <p class="text-md font-medium">
-          Pridruži se Masterclass programu i promeni način na koji neguješ kosu.
+          Prijavi se klikom na dugme ispod i promeni način na koji neguješ kosu.
         </p>
         <p class="text-base text-[#855723] mt-1">
           Ekskluzivna ponuda dostupna ograničeno vreme.
@@ -40,8 +40,39 @@
       </div>
 
       <div class="text-lg mt-4 font-medium">
-        Samo <span class="line-through text-gray-400">$309.97</span>
-        <strong class="text-[#5A3A1B]">$24.97</strong> danas!
+        Samo <span class="line-through text-gray-400">12000 RSD</span>
+        <strong class="text-[#5A3A1B]">10000 RSD</strong> još
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="flex items-center justify-center lg:justify-start gap-4 py-2">
+        <div class="text-center">
+          <div class="text-5xl font-bold text-[#5A3A1B]">
+            {{ timeLeft.days }}
+          </div>
+          <div class="text-sm text-[#855723]">Dana</div>
+        </div>
+        <div class="text-5xl font-bold text-[#5A3A1B]">:</div>
+        <div class="text-center">
+          <div class="text-5xl font-bold text-[#5A3A1B]">
+            {{ timeLeft.hours }}
+          </div>
+          <div class="text-sm text-[#855723]">Sati</div>
+        </div>
+        <div class="text-5xl font-bold text-[#5A3A1B]">:</div>
+        <div class="text-center">
+          <div class="text-5xl font-bold text-[#5A3A1B]">
+            {{ timeLeft.minutes }}
+          </div>
+          <div class="text-sm text-[#855723]">Minuta</div>
+        </div>
+        <div class="text-5xl font-bold text-[#5A3A1B]">:</div>
+        <div class="text-center">
+          <div class="text-5xl font-bold text-[#5A3A1B]">
+            {{ timeLeft.seconds }}
+          </div>
+          <div class="text-sm text-[#855723]">Sekundi</div>
+        </div>
       </div>
 
       <p class="text-gray-800 text-base font-semibold max-w-[75%]">
@@ -54,28 +85,50 @@
         >
       </p>
 
-      <button
-        class="join-btn cursor-pointer inline-block bg-[#5A3A1B] text-white px-10 py-3 rounded-lg text-base font-semibold relative overflow-hidden group transition"
-        (click)="sendVoucherMessage()"
-      >
-        <span class="relative z-10">Preuzmi vaučer</span>
-        <span
-          class="absolute inset-0 bg-gradient-to-r from-[#fff]/10 via-[#fff]/40 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700"
-        ></span>
-      </button>
+      <div class="flex flex-col sm:flex-row gap-4 w-full">
+        <button
+          class="join-btn cursor-pointer bg-[#5A3A1B] text-white px-6 sm:px-10 py-3 rounded-lg text-base font-semibold relative overflow-hidden group transition w-full sm:w-auto text-center"
+          (click)="sendReserveMessage()"
+        >
+          <span class="relative z-10">Instant prijava</span>
+          <span
+            class="absolute inset-0 bg-gradient-to-r from-[#fff]/10 via-[#fff]/40 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700"
+          ></span>
+        </button>
+
+        <button
+          class="join-btn cursor-pointer bg-[#5A3A1B] text-white px-6 sm:px-10 py-3 rounded-lg text-base font-semibold relative overflow-hidden group transition w-full sm:w-auto text-center"
+          (click)="sendVoucherMessage()"
+        >
+          <span class="relative z-10">Preuzmi vaučer</span>
+          <span
+            class="absolute inset-0 bg-gradient-to-r from-[#fff]/10 via-[#fff]/40 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700"
+          ></span>
+        </button>
+      </div>
 
       <p class="text-sm text-gray-600 leading-snug max-w-sm mx-auto lg:mx-0">
-        5 koraka do prvih 10.000 pratilaca uz Reels video sadržaj
+        Prijavi se na vreme i ne propusti ovu ponudu
       </p>
     </div>
 
     <!-- Right part (image) -->
-    <div class="flex-1 flex justify-center lg:justify-end blur-animate">
-      <img
-        src="assets/wb.png"
-        alt="Masterclass slika"
-        class="w-[380px] lg:w-[420px] rounded-2xl shadow-lg p-2 bg-white/90"
-      />
+    <div
+      class="flex flex-1 flex-col lg:flex-row items-center justify-end gap-4 blur-animate text-center"
+    >
+      <div class="flex flex-col items-center">
+        <img
+          src="assets/wb.png"
+          alt="Masterclass slika"
+          class="w-[380px] lg:w-[420px] rounded-2xl shadow-lg p-2 bg-white/90"
+        />
+        <h2
+          class="text-4xl lg:text-5xl font-semibold mt-0"
+          style="font-family: 'Dancing Script', cursive"
+        >
+          KaMiliona
+        </h2>
+      </div>
     </div>
   </div>
 </section>
@@ -92,7 +145,7 @@
     <h2
       class="scroll-animate text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl leading-tight mb-8"
     >
-      Pogledajte 5-minutni video - i saznajte zašto žene prate
+      Pogledaj 5-minutni video - i saznaj zašto žene prate
       <span class="text-[#5A3A1B] font-semibold">moj sistem</span> nege kose
     </h2>
 
