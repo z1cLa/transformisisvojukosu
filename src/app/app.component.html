@@ -176,6 +176,8 @@
   </div>
 </section>
 
+<!-- CARDS SECTION -->
+
 <section
   class="relative min-h-[100vh] flex flex-col items-center justify-center overflow-hidden py-20 px-3 sm:px-0"
 >
@@ -310,6 +312,70 @@
           znaš šta tvojoj kosi treba i kako to da joj pružiš
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+
+<section
+  class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#f8f3ee]"
+>
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img
+      src="assets/silueta11.jpg"
+      class="w-full h-full object-cover object-center opacity-90"
+    />
+  </div>
+
+  <!-- Soft overlay tint -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/50 to-[#f8f3ee]/80"
+  ></div>
+
+  <!-- FLOATING CARD -->
+  <div
+    class="scroll-animate relative z-10 max-w-2xl w-full mx-4 sm:mx-auto px-6 sm:px-10 py-12 sm:py-14 bg-white/75 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] rounded-3xl border border-white/60"
+  >
+    <h2
+      class="text-center text-lg md:text-2xl text-[#3a2818] leading-snug mb-8"
+    >
+      Ako si se pronašla u ovome,<br />
+      ili znaš nekoga kome bi ovo rešilo problem…
+      <br />Piši mi, tu sam za tebe 🤍
+    </h2>
+
+    <!-- Buttons -->
+    <div class="mt-6 flex flex-col gap-3">
+      <div class="flex flex-row gap-3 mb-10">
+        <button
+          (click)="sendReserveMessage()"
+          class="w-full bg-[#3a2818] text-white py-3 rounded-xl text-md font-medium hover:bg-[#4a3521] transition cursor-pointer"
+        >
+          Zakaži termin
+        </button>
+
+        <button
+          (click)="sendVoucherMessage()"
+          class="w-full bg-[#e6d4c3] text-[#3a2818] py-3 rounded-xl text-md font-medium hover:bg-[#d8c0aa] transition cursor-pointer"
+        >
+          Preuzmi vaučer
+        </button>
+      </div>
+      <!-- Input -->
+      <textarea
+        [(ngModel)]="whatsappText"
+        placeholder="Ili tvoja poruka…"
+        class="w-full h-48 p-5 bg-white border border-[#e1d6c9] rounded-xl focus:ring-2 focus:ring-[#c5a78a] text-[#3a2818] text-lg outline-none placeholder:text-[#a78b73]"
+      ></textarea>
+
+      <button
+        (click)="sendWhatsAppCustom()"
+        class="w-full bg-[#3a2818] text-white py-3 rounded-xl text-md md:text-lg font-medium hover:bg-[#4a3521] transition cursor-pointer"
+      >
+        📩 Pošalji poruku na WhatsApp
+      </button>
     </div>
   </div>
 </section>

@@ -16,6 +16,8 @@ interface TimeLeft {
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterViewInit {
+  whatsappText: string = '';
+
   timeLeft: TimeLeft = {
     days: 15,
     hours: 0,
@@ -88,5 +90,13 @@ export class AppComponent implements AfterViewInit {
     // Opens WhatsApp chat with the given number and message
     const url = `https://wa.me/${phone}?text=${message}`;
     window.open(url, '_blank');
+  }
+
+  sendWhatsAppCustom() {
+    const phone = '381613210805';
+    const message = encodeURIComponent(
+      this.whatsappText || 'Zdravo! Želim više informacija 🌸'
+    );
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   }
 }
