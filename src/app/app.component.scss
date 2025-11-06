@@ -109,3 +109,12 @@
   opacity: 0.79;
   mix-blend-mode: soft-light;
 }
+
+a[href^="#"] {
+  scroll-behavior: smooth;
+}
+
+a[aria-label="Instagram"]:hover svg,
+a[aria-label="WhatsApp"]:hover svg {
+  filter: drop-shadow(0 0 6px #c5a78a80);
+}

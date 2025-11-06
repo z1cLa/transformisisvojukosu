@@ -1,6 +1,7 @@
 <!-- HERO SECTION -->
 
 <section
+  id="hero"
   class="min-h-[100vh] flex items-center justify-center relative overflow-hidden py-10 mx-[0.15rem] sm:mx-0"
 >
   <!-- BG IMAGE -->
@@ -136,6 +137,7 @@
 <!-- VIDEO SECTION -->
 
 <section
+  id="video"
   class="min-h-[100vh] flex items-center justify-center relative overflow-hidden py-10 rounded-lg mx-5 sm:mx-0"
 >
   <div
@@ -164,21 +166,31 @@
     </div>
 
     <!-- Button -->
-    <button
-      class="scroll-animate join-btn cursor-pointer inline-block bg-[#5A3A1B] text-white px-10 py-3 rounded-lg text-base font-semibold relative overflow-hidden group transition"
-      (click)="sendVoucherMessage()"
-    >
-      <span class="relative z-10">Preuzmi vaučer</span>
-      <span
-        class="absolute inset-0 bg-gradient-to-r from-[#fff]/10 via-[#fff]/40 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700"
-      ></span>
-    </button>
+    <div class="flex flex-col gap-3 lg:flex-row">
+      <button
+        class="flex-1 scroll-animate join-btn cursor-pointer inline-block bg-[#5A3A1B] text-white px-10 py-3 rounded-lg text-base font-semibold relative overflow-hidden group transition"
+        (click)="sendVoucherMessage()"
+      >
+        <span class="relative z-10">Preuzmi poklon vaučer</span>
+        <span
+          class="absolute inset-0 bg-gradient-to-r from-[#fff]/10 via-[#fff]/40 to-transparent opacity-0 group-hover:opacity-100 translate-x-[-100%] group-hover:translate-x-[100%] transition-all duration-700"
+        ></span>
+      </button>
+
+      <button
+        class="flex-1 scroll-animate join-btn cursor-pointer inline-block bg-[#5A3A1B] text-white px-10 py-3 rounded-lg text-base font-semibold relative overflow-hidden group transition"
+        (click)="sendReserveMessage()"
+      >
+        Zakaži svoj termin
+      </button>
+    </div>
   </div>
 </section>
 
 <!-- CARDS SECTION -->
 
 <section
+  id="cards"
   class="relative min-h-[100vh] flex flex-col items-center justify-center overflow-hidden py-20 px-3 sm:px-0"
 >
   <!-- Subtle top separator to add depth -->
@@ -319,6 +331,7 @@
 <!-- FORM SECTION -->
 
 <section
+  id="kontakt"
   class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#f8f3ee]"
 >
   <!-- Background Image -->
@@ -379,3 +392,97 @@
     </div>
   </div>
 </section>
+
+<!-- FOOTER -->
+<footer
+  class="relative w-full bg-[#f8f3ee] border-t border-[#e6d4c3] py-10 px-6 sm:px-16 text-center sm:text-left"
+>
+  <div
+    class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6"
+  >
+    <!-- Left: Logo or Name -->
+    <div class="flex items-center gap-3">
+      <img
+        src="assets/image1.png"
+        alt="Logo"
+        class="w-14 h-14 rounded-full shadow-md bg-white/80 p-1 object-cover"
+        style="object-position: center 0%"
+      />
+
+      <div>
+        <h2
+          class="text-2xl font-semibold text-[#3a2818]"
+          style="font-family: 'Dancing Script', cursive"
+        >
+          KaMiliona
+        </h2>
+        <p class="text-sm text-[#855723]">
+          Neguj kosu s ljubavlju, svakog dana ✨
+        </p>
+      </div>
+    </div>
+
+    <!-- Middle: Quick Links -->
+    <div class="flex flex-wrap justify-center gap-6 text-[#5A3A1B] text-sm">
+      <a href="#hero" (click)="smoothScroll('hero'); $event.preventDefault()"
+        >Početna</a
+      >
+      <a href="#video" (click)="smoothScroll('video'); $event.preventDefault()"
+        >Video</a
+      >
+      <a href="#cards" (click)="smoothScroll('cards'); $event.preventDefault()"
+        >Program</a
+      >
+      <a
+        href="#kontakt"
+        (click)="smoothScroll('kontakt'); $event.preventDefault()"
+        >Kontakt</a
+      >
+    </div>
+
+    <!-- Right: Social Links -->
+    <div class="flex gap-5 justify-center">
+      <a
+        href="https://www.instagram.com/kamilliona?igsh=MW8xcHJ5cnB6NzRqbw=="
+        target="_blank"
+        class="text-[#5A3A1B] hover:text-[#855723] transition"
+        aria-label="Instagram"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-.75a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"
+          />
+        </svg>
+      </a>
+
+      <a
+        href="https://wa.me/381613210805"
+        target="_blank"
+        class="text-[#5A3A1B] hover:text-[#855723] transition"
+        aria-label="WhatsApp"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            d="M12.04 2c-5.5 0-9.96 4.42-9.96 9.87 0 1.74.48 3.41 1.38 4.89L2 22l5.44-1.41A10.09 10.09 0 0 0 12.04 22c5.5 0 9.96-4.42 9.96-9.87S17.54 2 12.04 2zm0 18.04c-1.53 0-3.03-.4-4.35-1.17l-.31-.18-3.23.84.86-3.11-.2-.32A8.34 8.34 0 0 1 3.7 11.9c0-4.63 3.75-8.4 8.34-8.4 4.6 0 8.34 3.77 8.34 8.4 0 4.63-3.75 8.4-8.34 8.4zm4.63-6.04c-.25-.13-1.48-.72-1.7-.8-.23-.08-.4-.12-.57.12-.17.24-.66.8-.81.97-.15.16-.3.18-.56.06-.25-.13-1.05-.38-2-1.2a7.29 7.29 0 0 1-1.34-1.66c-.14-.24 0-.36.1-.49.1-.12.25-.3.37-.45.12-.15.16-.25.25-.42.08-.16.04-.3-.02-.42-.06-.12-.57-1.35-.78-1.85-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.64 4.12 3.6.58.23 1.03.37 1.38.47.58.18 1.1.15 1.51.09.46-.07 1.48-.6 1.7-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.18-.48-.3z"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom Text -->
+  <div class="mt-8 text-center text-xs text-[#8b7058]">
+    © {{ currentYear || 2025 }} KaMiliona. Sva prava zadržana. |
+    <span class="text-[#5A3A1B]">Developed by z1</span>
+  </div>
+</footer>

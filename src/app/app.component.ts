@@ -17,6 +17,7 @@ interface TimeLeft {
 })
 export class AppComponent implements AfterViewInit {
   whatsappText: string = '';
+  currentYear = new Date().getFullYear();
 
   timeLeft: TimeLeft = {
     days: 15,
@@ -98,5 +99,12 @@ export class AppComponent implements AfterViewInit {
       this.whatsappText || 'Zdravo! Želim više informacija 🌸'
     );
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  }
+
+  smoothScroll(targetId: string) {
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }
