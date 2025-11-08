@@ -27,12 +27,22 @@ export class AppComponent implements AfterViewInit {
   };
 
   private startTimer() {
-    const countDownDate = new Date();
-    countDownDate.setDate(countDownDate.getDate() + 15);
+    // 🎯 Set the start date to 08.11.2025 (year, monthIndex (0-based), day)
+    const startDate = new Date(2025, 10, 8); // November is monthIndex 10 (0 = Jan)
+
+    // 🎯 End date = startDate + 15 days
+    const countDownDate = new Date(startDate);
+    countDownDate.setDate(startDate.getDate() + 15);
 
     interval(1000).subscribe(() => {
       const now = new Date().getTime();
       const distance = countDownDate.getTime() - now;
+
+      // When expired, stop and show zeros
+      if (distance <= 0) {
+        this.timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+        return;
+      }
 
       this.timeLeft = {
         days: Math.floor(distance / (1000 * 60 * 60 * 24)),
