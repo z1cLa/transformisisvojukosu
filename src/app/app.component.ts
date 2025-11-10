@@ -25,10 +25,9 @@ export class AppComponent implements AfterViewInit {
     minutes: 0,
     seconds: 0,
   };
-
   private startTimer() {
-    // 🎯 Set the start date to 08.11.2025 (year, monthIndex (0-based), day)
-    const startDate = new Date(2025, 10, 8); // November is monthIndex 10 (0 = Jan)
+    // 🎯 Set the start date to 11.11.2025 at 14:00 Serbian time
+    const startDate = new Date(2025, 10, 11, 14, 0, 0); // November 11, 2025, 14:00:00
 
     // 🎯 End date = startDate + 15 days
     const countDownDate = new Date(startDate);
