@@ -25,14 +25,23 @@ export class AppComponent implements AfterViewInit {
     minutes: 0,
     seconds: 0,
   };
-
   private startTimer() {
-    const countDownDate = new Date();
-    countDownDate.setDate(countDownDate.getDate() + 15);
+    // 🎯 Set the start date to 11.11.2025 at 14:00 Serbian time
+    const startDate = new Date(2025, 10, 11, 14, 0, 0); // November 11, 2025, 14:00:00
+
+    // 🎯 End date = startDate + 15 days
+    const countDownDate = new Date(startDate);
+    countDownDate.setDate(startDate.getDate() + 15);
 
     interval(1000).subscribe(() => {
       const now = new Date().getTime();
       const distance = countDownDate.getTime() - now;
+
+      // When expired, stop and show zeros
+      if (distance <= 0) {
+        this.timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+        return;
+      }
 
       this.timeLeft = {
         days: Math.floor(distance / (1000 * 60 * 60 * 24)),
