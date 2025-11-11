@@ -78,37 +78,36 @@ export class AppComponent implements AfterViewInit {
   }
 
   sendReserveMessage() {
-    const phone = '381613210805'; // no '+' for WhatsApp link
+    const phone = '381613210805';
+    const flower = '%F0%9F%8C%B8'; // 🌸
+
     const message =
-      'Zdravo Miona,\nŽelim da rezervišem svoj ekskluzivni HairSpa tretman! 🌸';
+      'Zdravo Miona,%0AŽelim da rezervišem svoj ekskluzivni HairSpa tretman! ' +
+      flower;
 
-    const encodedMessage = encodeURIComponent(message);
-
-    const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
     window.open(url, '_blank');
   }
 
   sendVoucherMessage() {
-    const phone = '381613210805'; // no '+' for WhatsApp link
-    const message = [
-      'Zdravo Miona,',
-      'Želim da poklonim tvoj HairSpa tretman dragoj osobi.',
-      'Možeš li mi pomoći oko vaučera? ✨',
-    ].join('\n');
+    const phone = '381613210805';
+    const sparkles = '%E2%9C%A8'; // ✨
 
-    const encodedMessage = encodeURIComponent(message);
-    const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+    const message =
+      'Zdravo Miona,%0AŽelim da poklonim tvoj HairSpa tretman dragoj osobi.%0AMožeš li mi pomoći oko vaučera? ' +
+      sparkles;
+
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
     window.open(url, '_blank');
   }
 
   sendWhatsAppCustom() {
     const phone = '381613210805';
-    const messageText =
-      this.whatsappText?.trim() || 'Zdravo! Želim više informacija 🌸';
+    const flower = '%F0%9F%8C%B8'; // 🌸
+    const message =
+      this.whatsappText?.trim() || `Zdravo! Želim više informacija ${flower}`;
 
-    const encodedMessage = encodeURIComponent(messageText);
-    const url = `https://wa.me/${phone}?text=${encodedMessage}`;
-
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
     window.open(url, '_blank');
   }
 
